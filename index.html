@@ -1,12 +1,440 @@
+<!-- old -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Travel website</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; 
+    box-sizing: border-box;
+}
+
+.wrapper{
+    padding: 10px 5%;
+}
+#card-area{
+    padding: 5px 0;
+}
+.box-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 40px;
+    margin-top: 10px;
+}
+.box {
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+}
+.box img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+h3,p{
+    color: #fff;
+}
+.overlay {
+    
+	width: 100%;
+	height: 0;
+	background: linear-gradient(transparent,#1c1c1c 58%);
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	font-size: 14px;
+	transition: height 0.5s;
+}
+.overlay h3 {
+	font-weight: 500;
+	margin-bottom: 5px;
+	margin-top: 80%;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.overlay a {
+	margin-top: 10px;
+	color: #262626;
+	text-decoration: none;
+	font-size: 14px;
+	background: #fff;
+	border-radius: 50px;
+	text-align: center;
+	padding: 5px 15px;
+}
+.box:hover img{
+    transform: scale(1.1);
+}
+.box:hover .overlay{
+    height: 100%;
+}
+
+
+    </style>
 </head>
 <body>
-    <h1>new website new life</h1>
+    <header class="relative text-white shadow-md">
+        <!-- Navbar -->
+        <nav class="absolute top-0 left-0 w-full z-20 bg-transparent flex items-center justify-between p-2 max-w-7xl mx-auto">
+            <a href="#">
+                <img src="images/images.png" alt="Logo" class="h-10 object-contain">
+            </a>
+            
+            <ul class="flex items-center space-x-6">
+                <li class="relative group">
+                    <a href="#" class="text-[#f36309] hover:text-[#f36309] hover:bg-[#94c4f8] px-4 py-2 rounded">Popular</a>
+                </li>
+                
+                <li class="relative group">
+                    <a href="#" class="text-[#f36309] hover:text-[#f36309] hover:bg-[#94c4f8] px-4 py-2 rounded">Asia</a>
+                    <ul class="absolute left-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg hidden group-hover:block">
+                        <li><a href="#" class="block px-4 py-2 text-[#171515] hover:bg-[#5bc2eb]">China</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-[#171515] hover:bg-[#5bc2eb]">Bangladesh</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-[#171515] hover:bg-[#5bc2eb]">India</a></li>
+                    </ul>
+                </li>
+
+                <li class="relative group">
+                    <a href="#" class="text-[#f36309] hover:text-[#f36309] hover:bg-[#94c4f8] px-4 py-2 rounded">Europe</a>
+                    <ul class="absolute left-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg hidden group-hover:block">
+                        <li><a href="#" class="block px-4 py-2 text-[#171515] hover:bg-[#5bc2eb]">Turkey</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-[#171515] hover:bg-[#5bc2eb]">Hungary</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-[#171515] hover:bg-[#5bc2eb]">Denmark</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="text-[#f36309] hover:text-[#f36309] hover:bg-[#94c4f8] px-4 py-2 rounded">Contact</a>
+                </li>
+                <li>
+                    <a href="#" class="text-[#f36309] hover:text-[#f36309] hover:bg-[#94c4f8] px-4 py-2 rounded">About</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Banner -->
+        <section class="relative min-h-[500px] bg-cover bg-center flex items-center justify-center p-3 text-white text-center overflow-hidden" 
+        
+        style="background-image: url('images/pexels-le-sixieme-reve-462544708-27130149.jpg');">
+
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+        <!-- <div class="absolute inset-0 bg-opacity-50 z-10 backdrop-blur" style="background: linear-gradient(hsl(240 100% 50% / 0.1), hsl(0 100% 50% / 0.1));"></div> -->
+
+
+
+
+
+
+        
+            <div class="relative z-20">
+                <h1 class="text-4xl md:text-5xl font-bold m-0">Your Next vacation!</h1>
+                <p class="text-lg md:text-xl my-4">Explore our wide range of products and enjoy the best deals and discounts available.</p>
+                <form class="mt-4 flex items-center space-x-2">
+                    <input type="text" placeholder="Search here" class="flex-1 px-4 py-2 text-black rounded-l-md border border-gray-300 focus:outline-none" />
+                    <button type="submit" class="px-4 py-2 bg-[#f36309] text-white rounded-r-md hover:bg-[#c94f06]">Search</button>
+                </form>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div>
+        <div>
+            <div>
+                <div>
+                    <!--  -->
+                    <h2 class="text-2xl font-bold mt-4">
+                        <span class="inline-block border-b-2 border-red-500 decoration-2 underline-offset-4">Popu</span>lar Spots
+                    </h2>
+                </div>       
+            </div>
+        </div>
+        <section class="p-8">
+            <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+                <!-- Card 1 -->
+                <div class="bg-[url('images/marco-5.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-[url('images/kamran-6.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-[url('images/min-8.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-[url('images/marco-5.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-[url('images/laura-4.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-[url('images/ouael-9.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                <!-- Card 7 -->
+                <div class="bg-[url('images/sam-11.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                <!-- Card 8 -->
+                <div class="bg-[url('images/kamran-3.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <div>
+        <div>
+            <div>
+                <div>
+                   
+                    <h2 class="text-2xl font-bold mt-4">
+                        <span class="inline-block border-b-2 border-red-500 decoration-2 underline-offset-4">Asi</span>a
+                    </h2>
+                </div>       
+            </div>
+        </div>
+        <section class="p-8">
+            <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+        
+                <div class="bg-[url('images/marco-5.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/kamran-6.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+              
+                <div class="bg-[url('images/min-8.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/marco-5.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/laura-4.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+               
+                <div class="bg-[url('images/ouael-9.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/sam-11.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/kamran-3.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- <div>
+        <div>
+            <div>
+                <div>
+                    
+                    <h2 class="text-2xl font-bold mt-4">
+                        <span class="inline-block border-b-2 border-red-500 decoration-2 underline-offset-4 leading-10">Euro</span>pe
+                    </h2>
+                </div>       
+            </div>
+        </div>
+        <section class="p-8">
+            <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+                
+                <div class="bg-[url('images/marco-5.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/kamran-6.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+               
+                <div class="bg-[url('images/min-8.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/marco-5.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/laura-4.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/ouael-9.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/sam-11.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+                
+                <div class="bg-[url('images/kamran-3.jpg')] bg-cover bg-center  bg-white p-8 rounded-lg shadow-lg flex flex-col justify-between h-60">
+                    
+                    <p class="text-gray-100 mt-auto"><span class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                </div>
+            </div>
+        </section>
+    </div> -->
+
+
+
+
+    <!--  -->
+    <div>
+        <div>
+            <div>
+               
+                <h2 class="text-2xl font-bold mt-4">
+                    <span class="inline-block border-b-2 border-red-500 decoration-2 underline-offset-4">Asi</span>a
+                </h2>
+            </div>       
+        </div>
+    </div>
+    <!--  -->
+<!-- optional -->
+<div id="card-area">
+<div class="wrapper">
+    <div class="box-area">
+        <div class="box">
+            <img alt="" src="images/ouael-10.jpg">
+            <div class="overlay">
+                <h3 >Mountaineering</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p>
+                <a href="#">Book Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img alt="" src="images/ouael-10.jpg">
+            <div class="overlay">
+                <h3>Scuba Diving</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p>
+                <a href="#">Book Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img alt="" src="images/ouael-10.jpg">
+            <div class="overlay">
+                <h3>Travel World</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p>
+                <a href="#">Book Now</a>
+            </div>
+        </div>
+
+        <!-- New Cards -->
+        <div class="box">
+            <img alt="" src="images/ouael-10.jpg">
+            <div class="overlay">
+                <h3>Surfing</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p>
+                <a href="#">Book Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img alt="" src="images/ouael-10.jpg">
+            <div class="overlay">
+                <h3>Rock Climbing</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p>
+                <a href="#">Book Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img alt="" src="images/ouael-10.jpg">
+            <div class="overlay">
+                <h3>Sky Diving</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p>
+                <a href="#">Book Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img alt="" src="images/marco-5.jpg">
+            <div class="overlay">
+                <h3>Camping</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p>
+                <a href="#">Book Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img alt="" src="images/ouael-10.jpg">
+            <div class="overlay">
+                <h3>Hiking</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p>
+                <a href="#">Book Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+ <!-- optional close -->
+
+
+
+
+    </main>
+
+    <footer>
+        <!-- Footer content here -->
+    </footer>
 </body>
 </html>
